@@ -11,6 +11,7 @@ void Pini::lowerSalary(int workerId, double reduction) {
     auto worker = factoryPtr->workers[workerId];
     double newSalary = worker->getSalary() - reduction;
 
+    // Ensure that new salary is above the minimum salary
     if (newSalary < factoryPtr->minSalary)
         cout << MIN_SALARY_EXCEEDED_MSG << endl;
     else
